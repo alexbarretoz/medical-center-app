@@ -28,8 +28,7 @@ class Consultation(models.Model):
     date=models.DateTimeField(auto_now_add=True)
     diagnosis= models.CharField(max_length=100, null= False)
     treatment= models.CharField(max_length=100, null= False)
-    idDoctor= models.ForeignKey(Doctor, on_delete= models.CASCADE)
-
+    idDoctor= models.ManyToManyField(Doctor)  
 
 
 
@@ -38,7 +37,7 @@ class Patient(models.Model):
     name= models.CharField(max_length=100, null= False)
     dni= models.IntegerField(null= False, unique=True)
     age= models.CharField(max_length=100)
-    idConsulta= models.ForeignKey(Consultation, on_delete= models.CASCADE)
+    idConsultation= models.ForeignKey(Consultation, on_delete= models.CASCADE)
 
     def __str__(self):
         return self.name
