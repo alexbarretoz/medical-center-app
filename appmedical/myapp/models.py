@@ -8,7 +8,7 @@ class medicalCenter(models.Model):
 
     id= models.AutoField(primary_key=True)
     location= models.CharField(max_length=100)
-    name= models.CharField(max_length=100 , null= False)
+    name= models.CharField(max_length=100, default='DEFAULT VALUE')
     
 
 class Consultation(models.Model):
