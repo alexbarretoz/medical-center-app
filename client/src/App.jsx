@@ -80,6 +80,7 @@ function App() {
             {data3 && data3.length > 0 ? (
               data3.map(item3 => (
                   <div key={item3.id}>
+                      <p>FECHA:  {item3.date} </p>
                       <p>DIACNOSTICO: {item3.diagnosis}</p>
                       <p>TRATAMIENTO: {item3.treatment}</p>
                        
