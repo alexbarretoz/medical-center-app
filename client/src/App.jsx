@@ -46,7 +46,7 @@ function App() {
 
 
     //busqueda
-  const searcher = (e) => {
+    const searcher = (e) => {
     setSearch(e.target.value)
     console.log(e.target.value)
   }
@@ -72,19 +72,41 @@ function App() {
     return (
       <div>
 
-           <input value={search} onChange={searcher} type='text' placeholder='Search'></input>
+           <input value={search} onChange={searcher} type='text' placeholder='Search' className='form-control'></input>
 
           
+
+
+
              { results.map(item => (
-                  <div key={item.id}>
+
+
+                <div>
+                    <table className='table table-striped table-hover mt-5 shadow-lg'>
+
+                        <thead>
+                            <tr className='bg-curso'>
+                                <th>PACIENTES</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                        <div key={item.id}>
                       <p>PACIENTE: {item.name}</p>
                       <p>DNI: {item.dni}</p>
                       <p>EDAD: {item.age}</p>
                       <p>DOCTOR: {item.idDoctor}</p>
                       <p>CONSULTA: {item.idConsultation}</p>
-                      
-                      
+                        </div>    
+
+                        </tbody>
+                  
+
+                 </table>
                   </div>
+
               ))}
          
 

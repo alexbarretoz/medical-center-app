@@ -1,7 +1,13 @@
 body{
 
-background: #202020;
-color: white;
+background: #e0e0e0;
+color: rgb(0, 0, 0);
 
+
+}
+
+
+.bg-curso{
+    background-color: blueviolet;
 
 }
