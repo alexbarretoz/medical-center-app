@@ -1,13 +1,25 @@
 body{
 
-background: #e0e0e0;
+background-image: url('../img/hospital.jpg');
+background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el elemento */
+background-repeat: no-repeat; /* Evita que la imagen se repita */
 color: rgb(0, 0, 0);
 
 
 }
 
+.center{
+    text-align: center;
+   
+}
+
+.input{
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
 
 .bg-curso{
-    background-color: blueviolet;
+    background: blueviolet;
 
 }

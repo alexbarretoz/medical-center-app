@@ -1,6 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function App() {
     const [data, setData] = useState([]);
@@ -70,42 +71,47 @@ function App() {
 
 
     return (
-      <div>
 
+
+
+       
+    
+      <div className='center row justify-content-center'>
+        <div class="col-4">
+        <h1>PACIENTES DEL CENTRO MEDICO</h1>
+
+          <div className='input '>
            <input value={search} onChange={searcher} type='text' placeholder='Search' className='form-control'></input>
 
-          
+          </div>
 
 
 
              { results.map(item => (
 
 
-                <div>
-                    <table className='table table-striped table-hover mt-5 shadow-lg'>
+                <div >
+                    
 
-                        <thead>
-                            <tr className='bg-curso'>
-                                <th>PACIENTES</th>
-                            </tr>
-                        </thead>
-
-
-                        <tbody>
-
+                     
                         <div key={item.id}>
-                      <p>PACIENTE: {item.name}</p>
-                      <p>DNI: {item.dni}</p>
-                      <p>EDAD: {item.age}</p>
-                      <p>DOCTOR: {item.idDoctor}</p>
-                      <p>CONSULTA: {item.idConsultation}</p>
+
+
+                        <ul className="list-group">
+                        <li className="list-group-item active">{item.name}</li>
+                        <li className="list-group-item">DNI: {item.dni}</li>
+                        <li className="list-group-item">EDAD: {item.age}</li>
+                        <li className="list-group-item">DOCTOR: {item.idDoctor}</li>
+                        <li className="list-group-item">CONSULTA: {item.idConsultation}</li>
+                        </ul>
+
                         </div>    
 
-                        </tbody>
                   
 
-                 </table>
+            
                   </div>
+                  
 
               ))}
          
@@ -140,7 +146,7 @@ function App() {
 
 
 
-
+</div>
       </div>
   );
 }
