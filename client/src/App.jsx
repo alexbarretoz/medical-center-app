@@ -1,5 +1,53 @@
-// App.jsx
-import React, { useState, useEffect } from 'react';
+ import './App.css';
+ 
+
+ import React from 'react';
+ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+ //import App from './patientlist.jsx';
+ import PatientForm from './patientform.jsx';
+ 
+ const App = () => {
+   return (
+     <Router>
+       <div>
+        <h1>hola</h1>
+         <nav>
+           <ul>
+             <li>
+               <Link to="/">Home</Link>
+             </li>
+             <li>
+               <Link to="/patients">Patient List</Link>
+             </li>
+             <li>
+               <Link to="/add">Add Patient</Link>
+             </li>
+           </ul>
+         </nav>
+ 
+         <Route path="/" exact component={Home} />
+    
+         <Route path="/add" component={PatientForm} />
+       </div>
+     </Router>
+   );
+ };
+ 
+ const Home = () => {
+   return <h2>Welcome to the Patient Management System</h2>;
+ };
+ 
+ export default App;
+ 
+
+
+
+
+
+ 
+ /*App.jsx
+import React, { useState, useEffect, Component } from 'react';
+
 import axios from 'axios';
 import './App.css';
 
@@ -152,6 +200,120 @@ function App() {
 }
 
 
-
-
 export default App;
+*/
+/*
+function FormularioAgregarPaciente() {
+    const [name, setNombre] = useState('');
+    const [age, setEdad] = useState('');
+  
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/myapp/api/patient/', {
+                name: name,
+                age: age,
+               
+            });
+            console.log('Paciente agregado:', response.data);
+            // Puedes mostrar un mensaje de éxito aquí
+        } catch (error) {
+            console.error('Error al agregar paciente:', error);
+            // Puedes mostrar un mensaje de error al usuario aquí
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                Nombre:
+                <input type="text" value={name} onChange={(e) => setNombre(e.target.value)} />
+            </label>
+            <label>
+                Edad:
+                <input type="number" value={age} onChange={(e) => setEdad(e.target.value)} />
+            </label>
+            
+            <button type="submit">Agregar Paciente</button>
+        </form>
+    );
+}
+
+export default FormularioAgregarPaciente;
+*/
+
+
+/*
+
+class PatientForm extends Component {
+  state = {
+    name: '',
+    dni: '',
+    age: '',
+    idConsultation: '',
+    idDoctor: ''
+  }
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { name, dni, age, idConsultation, idDoctor } = this.state;
+
+    axios.post('http://127.0.0.1:8000/myapp/api/patient/', {
+      name,
+      dni,
+      age,
+      idConsultation,
+      idDoctor: [idDoctor] // Convertimos idDoctor en un array, ya que es un campo de múltiples valores
+    })
+    .then((response) => {
+      console.log(response.data);
+      alert('Patient added successfully!');
+    })
+    .catch((error) => {
+      console.error('Error adding patient:', error);
+      alert('Failed to add patient. Please try again.');
+    });
+  }
+
+  render() {
+    const { name, dni, age, idConsultation, idDoctor } = this.state;
+
+    return (
+      <div>
+        <h2>Add New Patient</h2>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" name="name" value={name} onChange={this.handleChange} />
+          </label>
+          <label>
+            DNI:
+            <input type="text" name="dni" value={dni} onChange={this.handleChange} />
+          </label>
+          <label>
+            Age:
+            <input type="text" name="age" value={age} onChange={this.handleChange} />
+          </label>
+          <label>
+            Consultation ID:
+            <input type="text" name="idConsultation" value={idConsultation} onChange={this.handleChange} />
+          </label>
+          <label>
+            Doctor ID:
+            <input type="text" name="idDoctor" value={idDoctor} onChange={this.handleChange} />
+          </label>
+          <button type="submit">Add Patient</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default PatientForm;
+
+*/
