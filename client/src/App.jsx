@@ -1,43 +1,30 @@
  import './App.css';
- 
-
  import React from 'react';
- import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
- //import App from './patientlist.jsx';
- import PatientForm from './patientform.jsx';
+ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+ import App from './patientlist';
+ import PatientForm from './patientform';
+ import Navbar from './components/Navbar';
  
- const App = () => {
+ function Show()  {
    return (
-     <Router>
-       <div>
-        <h1>hola</h1>
-         <nav>
-           <ul>
-             <li>
-               <Link to="/">Home</Link>
-             </li>
-             <li>
-               <Link to="/patients">Patient List</Link>
-             </li>
-             <li>
-               <Link to="/add">Add Patient</Link>
-             </li>
-           </ul>
-         </nav>
- 
-         <Route path="/" exact component={Home} />
     
-         <Route path="/add" component={PatientForm} />
+       <div>
+        
+          <Router>
+           <Navbar/>
+            <Routes>
+             <Route path="/list" element={<App/>} />
+              <Route path="/add" element={<PatientForm/>} />
+            </Routes>
+            </Router>
+         
        </div>
-     </Router>
+    
    );
- };
+ }
  
- const Home = () => {
-   return <h2>Welcome to the Patient Management System</h2>;
- };
  
- export default App;
+ export default Show;
  
 
 
