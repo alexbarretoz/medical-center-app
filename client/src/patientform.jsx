@@ -42,31 +42,34 @@ class PatientForm extends Component {
       const { name, dni, age, idConsultation, idDoctor } = this.state;
   
       return (
-        <div>
+        <div className='center row justify-content-center'>
+        <div className='col-12'>
           <h2>Add New Patient</h2>
           <form onSubmit={this.handleSubmit}>
             <label>
               Name:
-              <input type="text" name="name" value={name} onChange={this.handleChange} />
+
+              <input type="text" name="name" className='form-control' value={name} onChange={this.handleChange} />
             </label>
             <label>
               DNI:
-              <input type="text" name="dni" value={dni} onChange={this.handleChange} />
+              <input type="text" name="dni" className='form-control' value={dni} onChange={this.handleChange} />
             </label>
             <label>
               Age:
-              <input type="text" name="age" value={age} onChange={this.handleChange} />
+              <input type="text" name="age" className='form-control' value={age} onChange={this.handleChange} />
             </label>
             <label>
               Consultation ID:
-              <input type="text" name="idConsultation" value={idConsultation} onChange={this.handleChange} />
+              <input type="text" name="idConsultation" className='form-control'value={idConsultation} onChange={this.handleChange} />
             </label>
             <label>
               Doctor ID:
-              <input type="text" name="idDoctor" value={idDoctor} onChange={this.handleChange} />
+              <input type="text" name="idDoctor" className='form-control' value={idDoctor} onChange={this.handleChange} />
             </label>
-            <button type="submit">Add Patient</button>
+            <button type="submit" className="btn btn-primary">Add Patient</button>
           </form>
+        </div>
         </div>
       );
     }
