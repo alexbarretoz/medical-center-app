@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
+//import './App.css';
+
 
 class PatientForm extends Component {
     state = {
@@ -42,35 +43,63 @@ class PatientForm extends Component {
       const { name, dni, age, idConsultation, idDoctor } = this.state;
   
       return (
-        <div className='center row justify-content-center'>
-        <div className='col-12'>
-          <h2>Add New Patient</h2>
+        <div className='center justify-content-center principal'>
+        
+          <h2 className='titulo'>AGREGAR PACIENTES</h2>
           <form onSubmit={this.handleSubmit}>
-            <label>
-              Name:
+            
+          <div className='center justify-content-center'>
+            <div className='row'>
 
+            <div className='col-3 form-label'>
+            <label >
+              Nombre:
               <input type="text" name="name" className='form-control' value={name} onChange={this.handleChange} />
             </label>
-            <label>
+            </div>
+
+            <div className='col-3 form-label'>
+            <label >
               DNI:
               <input type="text" name="dni" className='form-control' value={dni} onChange={this.handleChange} />
             </label>
-            <label>
-              Age:
+            </div>
+
+            <div className='col-3 form-label'>
+            <label >
+              Edad:
               <input type="text" name="age" className='form-control' value={age} onChange={this.handleChange} />
             </label>
-            <label>
-              Consultation ID:
-              <input type="text" name="idConsultation" className='form-control'value={idConsultation} onChange={this.handleChange} />
-            </label>
-            <label>
-              Doctor ID:
+            </div>
+
+            <div className='col-3 form-label'>
+            <label >
+              Doctor:
               <input type="text" name="idDoctor" className='form-control' value={idDoctor} onChange={this.handleChange} />
             </label>
-            <button type="submit" className="btn btn-primary">Add Patient</button>
+            </div>
+            </div>
+
+            <div className='row'>
+              <div className='col form-label'>
+              <label >
+                Consulta:
+                <input type="text" name="idConsultation" className='form-control'value={idConsultation} onChange={this.handleChange} />
+              </label>
+              </div>
+
+              <div className='col'>
+                <button type="submit" className="btn btn-primary">Agregar Paciente</button>
+              </div>
+
+
+            </div>
+
+            </div>
+           
           </form>
         </div>
-        </div>
+      
       );
     }
   }

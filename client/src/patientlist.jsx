@@ -81,7 +81,7 @@ function App() {
         <h1>PACIENTES DEL CENTRO MEDICO</h1>
 
           <div className='input '>
-           <input value={search} onChange={searcher} type='text' placeholder='Search' className='form-control'></input>
+           <input value={search} onChange={searcher} type='text' placeholder='Buscar' className='form-control'></input>
 
           </div>
 
