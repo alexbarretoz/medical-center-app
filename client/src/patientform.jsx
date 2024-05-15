@@ -48,7 +48,7 @@ class PatientForm extends Component {
           <h2 className='titulo'>AGREGAR PACIENTES</h2>
           <form onSubmit={this.handleSubmit}>
             
-          <div className='center justify-content-center'>
+          <div className='center justify-content-center form'>
             <div className='row'>
 
             <div className='col-3 form-label'>
@@ -58,42 +58,42 @@ class PatientForm extends Component {
             </label>
             </div>
 
-            <div className='col-3 form-label'>
+            <div className='col-2 form-label'>
             <label >
               DNI:
               <input type="text" name="dni" className='form-control' value={dni} onChange={this.handleChange} />
             </label>
             </div>
 
-            <div className='col-3 form-label'>
+            <div className='col-2 form-label'>
             <label >
               Edad:
               <input type="text" name="age" className='form-control' value={age} onChange={this.handleChange} />
             </label>
             </div>
 
-            <div className='col-3 form-label'>
+            <div className='col-2 form-label'>
             <label >
               Doctor:
               <input type="text" name="idDoctor" className='form-control' value={idDoctor} onChange={this.handleChange} />
             </label>
             </div>
+
+            <div className='col-3 form-label'>
+              <label >
+                Consulta:
+                <input type="text" name="idConsultation" className='form-control for-bt 'value={idConsultation} onChange={this.handleChange} />
+              </label>
+              </div>
             </div>
 
             <div className='row'>
-              <div className='col form-label'>
-              <label >
-                Consulta:
-                <input type="text" name="idConsultation" className='form-control'value={idConsultation} onChange={this.handleChange} />
-              </label>
-              </div>
-
-              <div className='col'>
+              <div className='col '>
                 <button type="submit" className="btn btn-primary">Agregar Paciente</button>
               </div>
-
-
             </div>
+
+           
 
             </div>
            
